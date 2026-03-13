@@ -1,7 +1,9 @@
+import { useMemo } from "react";
+
 const Header = ({ cart }) => {
 
   // steate derivado
-  const isEmpy = () => { cart.length === 0 }
+  const isEmpy = useMemo(() => cart.length === 0, [cart]);
   const cartTotal = () => cart.reduce((total, item) => total + (item.quantity * item.price), 0);
 
   return (
@@ -26,7 +28,7 @@ const Header = ({ cart }) => {
               />
 
               <div id="carrito" className="bg-white p-3">
-                {isEmpy() ? (
+                {isEmpy ? (
                   <p className="text-center">El carrito esta vacio</p>
                 )
                   :
