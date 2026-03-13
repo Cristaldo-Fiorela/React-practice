@@ -5,9 +5,13 @@ import Header from "./components/Header";
 import { db } from "./data/db";
 
 function App() {
+  const initialCart = () => {
+    const sessionStorageCart = sessionStorage.getItem('cart');
+    return sessionStorageCart ? JSON.parse(sessionStorageCart) : [];
+  }
 
   const [data, setData] = useState(db);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(initialCart);
 
   const MAX_ITEMS = 5;
   const MIN_ITEMS = 1;
