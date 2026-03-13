@@ -15,6 +15,7 @@ function App() {
     if (itemExist >= 0) {
       const updatedCart = [...cart];
       updatedCart[itemExist].quantity++;
+      setCart(updatedCart);
     } else {
       item.quantity = 1;
       setCart([...cart, item]);
@@ -23,7 +24,9 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header
+        cart={cart}
+      />
       <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>
 
