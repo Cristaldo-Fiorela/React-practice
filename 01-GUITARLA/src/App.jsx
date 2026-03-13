@@ -16,9 +16,11 @@ function App() {
     const itemExist = cart.findIndex(guitar => guitar.id === item.id);
 
     if (itemExist >= 0) {
-      const updatedCart = [...cart];
-      updatedCart[itemExist].quantity++;
-      setCart(updatedCart);
+      if (cart[itemExist].quantity < MAX_ITEMS) {
+        const updatedCart = [...cart];
+        updatedCart[itemExist].quantity++;
+        setCart(updatedCart);
+      }
     } else {
       item.quantity = 1;
       setCart([...cart, item]);
