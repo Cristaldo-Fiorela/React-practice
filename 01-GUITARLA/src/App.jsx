@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Guitar from "./components/Guitar";
 import Header from "./components/Header";
@@ -63,6 +63,10 @@ function App() {
     setCart([]);
   }
 
+  useEffect(() => {
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
   return (
     <>
       <Header
@@ -72,10 +76,10 @@ function App() {
         decreaseQuantity={decreaseQuantity}
         clearCart={clearCart}
       />
-      <main class="container-xl mt-5">
-        <h2 class="text-center">Nuestra Colección</h2>
+      <main className="container-xl mt-5">
+        <h2 className="text-center">Nuestra Colección</h2>
 
-        <div class="row mt-5">
+        <div className="row mt-5">
           {data?.map((guitar) => (
             <Guitar
               key={guitar.id}
@@ -86,9 +90,9 @@ function App() {
         </div>
       </main>
 
-      <footer class="bg-dark mt-5 py-5">
-        <div class="container-xl">
-          <p class="text-white text-center fs-4 mt-4 m-md-0">
+      <footer className="bg-dark mt-5 py-5">
+        <div className="container-xl">
+          <p className="text-white text-center fs-4 mt-4 m-md-0">
             GuitarLA - Todos los derechos Reservados
           </p>
         </div>
