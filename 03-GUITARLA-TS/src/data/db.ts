@@ -1,4 +1,6 @@
-export const db = [
+import type { IGuitar } from "../types/types";
+
+export const db: IGuitar[] = [
     {
         id: 1,
         name: 'Lukather',
@@ -83,4 +85,4 @@ export const db = [
         description: 'Morbi ornare augue nisl, vel elementum dui mollis vel. Curabitur non ex id eros fermentum hendrerit.',
         price: 379,
     },
-  ]
+]
