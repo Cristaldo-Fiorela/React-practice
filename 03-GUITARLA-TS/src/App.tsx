@@ -6,7 +6,6 @@ function App() {
     const {
         data,
         cart,
-        setCart,
         addToCart,
         clearCart,
         decreaseQuantity,
@@ -36,7 +35,6 @@ function App() {
                         <Guitar
                             key={guitar.id}
                             guitar={guitar}
-                            setCart={setCart}
                             addToCart={addToCart}
                         />
                     ))}

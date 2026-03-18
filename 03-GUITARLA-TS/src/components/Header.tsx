@@ -1,3 +1,15 @@
+import type { TCartItem, TGuitar } from "../types/types";
+
+type HeaderProps = {
+    cart: TCartItem[];
+    removeFromCart: (id: TGuitar["id"]) => void;
+    decreaseQuantity: (id: TGuitar["id"]) => void;
+    increaseQuantity: (id: TGuitar["id"]) => void;
+    clearCart: () => void;
+    isEmpty: boolean;
+    cartTotal: number;
+};
+
 export default function Header({
     cart,
     removeFromCart,
@@ -6,7 +18,7 @@ export default function Header({
     clearCart,
     isEmpty,
     cartTotal,
-}) {
+}: HeaderProps) {
     return (
         <header className="py-5 header">
             <div className="container-xl">
