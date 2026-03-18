@@ -1,6 +1,6 @@
-import type { IGuitar } from "../types/types";
+import type { TGuitar } from "../types/types";
 
-export const db: IGuitar[] = [
+export const db: TGuitar[] = [
     {
         id: 1,
         name: 'Lukather',

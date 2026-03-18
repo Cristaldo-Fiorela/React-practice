@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { db } from '../data/db';
+import type { TCartItem } from "../types/types";
 
 function useCart() {
 
-  const initialCart = () => {
+  const initialCart = (): TCartItem[] => {
     const localStorageCart = localStorage.getItem('cart')
     return localStorageCart ? JSON.parse(localStorageCart) : []
   }

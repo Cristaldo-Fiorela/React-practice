@@ -1,8 +1,8 @@
-import type { IGuitar } from "../types/types";
+import type { TGuitar } from "../types/types";
 
 export type GuitarProps = {
-    guitar: IGuitar;
-    addToCart: (item: IGuitar) => void;
+    guitar: TGuitar;
+    addToCart: (item: TGuitar) => void;
 };
 
 export default function Guitar({ guitar, addToCart }: GuitarProps) {
